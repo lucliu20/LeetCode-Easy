@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/two-sum/
+# My post
+# https://leetcode.com/problems/two-sum/discuss/992717/Python-3-Dictionary-Comprehension-Illustrated-O(n)
 
 # Example 1:
 # Input: nums = [2,7,11,15], target = 9
