@@ -43,14 +43,14 @@ nums = [-3,2,-3,4,2]
 
 
 # Simplified approach #1
-class Solution:
-    def minStartValue(self, nums: List[int]) -> int:
-        init = 0
-        mini = float("inf")
-        for i in nums:
-            init += i
-            mini = min(mini, init)
-        return (1 - mini) if mini < 0 else 1
+# class Solution:
+#     def minStartValue(self, nums: list()) -> int:
+#         init = 0
+#         mini = float("inf")
+#         for i in nums:
+#             init += i
+#             mini = min(mini, init)
+#         return (1 - mini) if mini < 0 else 1
 
 # Runtime: 24 ms, faster than 97.66% of Python3 online submissions for Minimum Value to Get Positive Step by Step Sum.
 # Memory Usage: 14.2 MB, less than 63.54% of Python3 online submissions for Minimum Value to Get Positive Step by Step Sum.
@@ -68,6 +68,14 @@ class Solution:
 #                 cur += 1 - cur
 #         if res == 0: return 1
 #         return res
+
+
+# Approach #3
+# Using itertools.accumulate()
+import itertools
+class Solution:
+    def minStartValue(self, nums: list()) -> int:
+        return max(1, max(1 - sum for sum in itertools.accumulate(nums)))
 
 solution = Solution()
 print(solution.minStartValue(nums))
