@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/count-largest-group/
+# My post
+# https://leetcode.com/problems/count-largest-group/discuss/997020/Python-3-defaultdict()-One-pass-O(n)
 
 # Example 1:
 # Input: n = 13
