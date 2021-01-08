@@ -18,6 +18,8 @@ head.next.next = ListNode(3)
 head.next.next.next = ListNode(4)
 head.next.next.next.next = ListNode(5)
 
+"""
+# Iterative way
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         r = node = head
@@ -29,8 +31,25 @@ class Solution:
             r = tmp
         return r
 
+# Runtime: 28 ms
+# Memory Usage: 15.7 MB
+"""
+
+# Recursive way
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        def reverse(node):
+            if not node or not node.next:
+                return node
+            tmp = reverse(node.next)
+            node.next.next = node
+            node.next = None
+            return tmp
+        
+        return reverse(head)
+
 solution = Solution()
 solution.reverseList(head)
 
-# Runtime: 28 ms
-# Memory Usage: 15.7 MB
+# Runtime: 40 ms, faster than 30.22% of Python3 online submissions for Reverse Linked List.
+# Memory Usage: 20.3 MB, less than 5.82% of Python3 online submissions for Reverse Linked List.
