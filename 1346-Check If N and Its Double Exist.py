@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/check-if-n-and-its-double-exist/
+# My post
+# https://leetcode.com/problems/check-if-n-and-its-double-exist/discuss/1031467/Python-3-HashTable-One-pass-Explained-99-faster
 
 """
 Example 1:
