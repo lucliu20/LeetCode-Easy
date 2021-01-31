@@ -34,9 +34,11 @@ class Solution:
         d = collections.Counter()
         res = 0
         for n in range(lowLimit, highLimit+1):
-            t = 0
-            for c in str(n):
-                t += int(c)
+            t, r = 0, 0
+            while n > 0:
+                r = n%10
+                n //= 10
+                t += r
             d[t] += 1
             res = max(d[t], res)
 
@@ -45,5 +47,6 @@ class Solution:
 solution = Solution()
 print(solution.countBalls(lowLimit, highLimit))
 
-# 
+# Runtime: 656 ms, faster than 40.00% of Python3 online submissions for Maximum Number of Balls in a Box.
+# Memory Usage: 14.2 MB, less than 100.00% of Python3 online submissions for Maximum Number of Balls in a Box.
 
