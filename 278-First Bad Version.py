@@ -37,7 +37,7 @@ class Solution:
         while left <= right:
             mid = left + ((right-left) // 2)
             if isBadVersion(mid):
-                if isBadVersion(mid-1):
+                if isBadVersion(mid-1): # Use the element's left neighbor to determine
                     right = mid - 1
                 else:
                     return mid
