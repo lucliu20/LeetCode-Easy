@@ -27,28 +27,56 @@ def isBadVersion(version):
     return False
 
 # Time complexity : O(logn)
+# class Solution:
+#     def firstBadVersion(self, n):
+#         """
+#         :type n: int
+#         :rtype: int
+#         """
+#         left, right = 1, n
+#         while left <= right:
+#             mid = left + ((right-left) // 2)
+#             if isBadVersion(mid):
+#                 if isBadVersion(mid-1): # Use the element's left neighbor to determine
+#                     right = mid - 1
+#                 else:
+#                     return mid
+#             else:
+#                 left = mid + 1
+
+# Runtime: 32 ms, faster than 54.73% of Python3 online submissions for First Bad Version.
+# Memory Usage: 14 MB, less than 92.33% of Python3 online submissions for First Bad Version.
+
+
+# Attempt to implement with the LeetCode template II
+# Note that the "right" starts as "n+1", and the post-processing needs some tweaks as well in terms of the "if" condition is removed.
 class Solution:
     def firstBadVersion(self, n):
         """
         :type n: int
         :rtype: int
         """
-        left, right = 1, n
-        while left <= right:
+        left, right = 1, n + 1
+        while left < right:
             mid = left + ((right-left) // 2)
             if isBadVersion(mid):
-                if isBadVersion(mid-1): # Use the element's left neighbor to determine
-                    right = mid - 1
-                else:
-                    return mid
+                right = mid
             else:
                 left = mid + 1
+        
+        # Post-processing:
+        # End Condition: left == right
+        # if left != n + 1 and isBadVersion(left):
+        return left
+
+# Runtime: 20 ms, faster than 99.02% of Python3 online submissions for First Bad Version.
+# Memory Usage: 14.2 MB, less than 77.39% of Python3 online submissions for First Bad Version.
+
 
 solution = Solution()
 print(solution.firstBadVersion(5))
 
-# Runtime: 32 ms, faster than 54.73% of Python3 online submissions for First Bad Version.
-# Memory Usage: 14 MB, less than 92.33% of Python3 online submissions for First Bad Version.
+
 
 
 
