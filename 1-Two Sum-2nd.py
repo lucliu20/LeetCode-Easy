@@ -15,9 +15,10 @@
 # Input: nums = [3,3], target = 6
 # Output: [0,1]
 
-nums, target = [2,7,11,15], 9
+# nums, target = [2,7,11,15], 9
 # nums, target = [3,2,4], 6
 # nums, target = [1,3,3], 6
+nums, target = [-1,-2,-3,-4,-5], -8
 
 
 # Approach #1
@@ -63,11 +64,35 @@ class Solution:
                 return [myd[nums[i]], i]
             myd[target - nums[i]] = i
 
+
+# Runtime: 32 ms, faster than 99.89% of Python3 online submissions for Two Sum.
+# Memory Usage: 14.5 MB, less than 40.73% of Python3 online submissions for Two Sum.
+
+
+# Added Feb/28/2021
+# Two-pointer approach
+class Solution:
+    def twoSum(self, nums: list(), target: int) -> list():
+        nums = enumerate(nums) # returns an iterator
+        # print(next(nums))
+        nums = sorted(nums, key=lambda x:x[1])
+        # print(nums[0])
+        l, r = 0, len(nums)-1
+        while l < r:
+            if nums[l][1]+nums[r][1] == target:
+                return [nums[l][0], nums[r][0]]
+            elif nums[l][1]+nums[r][1] < target:
+                l += 1
+            else:
+                r -= 1
+
+# Runtime: 52 ms, faster than 29.70% of Python3 online submissions for Two Sum.
+# Memory Usage: 14.4 MB, less than 46.77% of Python3 online submissions for Two Sum.
+
+
 solution = Solution()
 print(solution.twoSum(nums, target))
 
 
-# Runtime: 32 ms, faster than 99.89% of Python3 online submissions for Two Sum.
-# Memory Usage: 14.5 MB, less than 40.73% of Python3 online submissions for Two Sum.
 
 
