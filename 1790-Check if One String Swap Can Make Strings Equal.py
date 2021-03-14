@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal/
+
 s1, s2 = "bank", "kanb"
 # s1, s2 = "x", "z"
 # s1, s2 = "aa", "bb"
