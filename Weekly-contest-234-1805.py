@@ -1,9 +1,11 @@
 # https://leetcode.com/problems/number-of-different-integers-in-a-string/
+# My post:
+# https://leetcode.com/problems/number-of-different-integers-in-a-string/discuss/1131868/Python-3-Explained-Intuitive
 
-# word = "a123bc34d8ef34"
+word = "a123bc34d8ef34"
 # word = "leet1234code234"
 # word = "a1b01c001"
-word = "0a0"
+# word = "0a0"
 
 
 class Solution:
