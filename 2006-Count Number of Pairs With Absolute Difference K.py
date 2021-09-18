@@ -45,7 +45,7 @@ class Solution:
                     res += 1
         return res
 
-
+# 236 / 236 test cases passed.
 # Runtime: 244 ms, faster than 20.00% of Python3 online submissions for Count Number of Pairs With Absolute Difference K.
 # Memory Usage: 14.3 MB, less than 40.00% of Python3 online submissions for Count Number of Pairs With Absolute Difference K.
 
@@ -67,6 +67,7 @@ class Solution:
             mydict[nums[i]] += 1
         return res
 
+# 236 / 236 test cases passed.
 # Runtime: 64 ms, faster than 20.00% of Python3 online submissions for Count Number of Pairs With Absolute Difference K.
 # Memory Usage: 14.2 MB, less than 40.00% of Python3 online submissions for Count Number of Pairs With Absolute Difference K.
 
